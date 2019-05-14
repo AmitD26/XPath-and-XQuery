@@ -1,0 +1,1 @@
+/customers/customerinfo[addr/city/text()="Toronto"][assistant/node()]/name/text()

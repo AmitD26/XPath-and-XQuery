@@ -1,0 +1,3 @@
+for $item in doc("purchaseorders.xml")/PurchaseOrders/PurchaseOrder/item
+group by $d := $item/partid
+return <totalcost partid="{$d}">"{xs:int(sum($item/quantity)) * xs:float(doc("products.xml")/products/product[@pid=$item/partid]/description/price)}"</totalcost>
